@@ -26,9 +26,9 @@ package glfw
 #cgo linux,wayland CFLAGS: -D_GLFW_WAYLAND -D_GNU_SOURCE
 
 // Linker Options:
-#cgo linux,!ogles2,!ogles3 -lGL
-#cgo linux,ogles2 -lGLESv2
-#cgo linux,ogles3 -lGLESv3
+#cgo linux,!ogles2,!ogles3 LDFLAGS: -lGL
+#cgo linux,ogles2 LDFLAGS: -lGLESv2
+#cgo linux,ogles3 LDFLAGS: -lGLESv3
 #cgo linux,!wayland LDFLAGS: -lX11 -lXrandr -lXxf86vm -lXi -lXcursor -lm -lXinerama -ldl -lrt
 #cgo linux,wayland LDFLAGS: -lwayland-client -lwayland-cursor -lwayland-egl -lxkbcommon -lm -ldl -lrt
 
